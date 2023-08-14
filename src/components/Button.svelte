@@ -22,7 +22,7 @@
   rounded-lg 
   text-sm 
   px-5 
-  py-2.5 
+  py-3.5 
   focus:outline-none
   w-full
   transition-colors
@@ -44,7 +44,7 @@
   rounded-lg 
   text-sm 
   px-5 
-  py-2.5 
+  py-3.5 
   focus:outline-none
   w-full
   transition-colors

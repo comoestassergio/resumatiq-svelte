@@ -9,7 +9,7 @@
 </svelte:head>
 
 <div class="flex flex-col gap-1 items-center justify-center w-full max-w-sm">
-	<h1 class="text-3xl font-medium">Resumatiq</h1>
+	<h1 class="text-5xl font-bold mb-3">Resumatiq</h1>
 	<p class="text-neutral-600">Creating resumes made as simple as never before</p>
 	<div class="flex flex-col gap-2 mt-6 w-full">
 		<Button link={{url: '/personal'}}>
