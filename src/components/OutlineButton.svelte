@@ -1,12 +1,13 @@
 <script lang="ts">
   export let type: 'button' | 'submit' = 'button';
   export let onClick: () => void;
+  export let stretch: boolean = false;
 </script>
 
 <button
   type={type}
   on:click={onClick}
-  class="
+  class={`
   py-2.5 px-5 
   text-sm 
   font-medium 
@@ -21,8 +22,8 @@
   focus:z-10 
   focus:ring-4 
   focus:ring-gray-200
-  w-full
-  "
+  ${stretch? 'w-full' : ''}
+  `}
 >
   <slot />
 </button>

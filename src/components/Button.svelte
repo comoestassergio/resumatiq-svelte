@@ -34,6 +34,7 @@
   href={link.url}
   target={link.target ?? '_self'}
   class="
+  block
   text-center
   text-white 
   bg-purple-600 

@@ -54,9 +54,8 @@
     <div class="flex flex-col items-center gap-4 md:flex-row">
       <TextInput
         value={website}
-        label='Website'
+        label='Website (opt.)'
         placeholder='personalwebsite.co'
-        required
       />
       <TextInput
         value={location}
@@ -66,7 +65,7 @@
       />
     </div>
     <div class="mt-6">
-      <Button type='submit'>
+      <Button link={{url: '/education'}}>
         Continue
       </Button>
     </div>
