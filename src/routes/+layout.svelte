@@ -1,11 +1,13 @@
-<script>
-  import Header from '../components/Header.svelte';
+<script lang="ts">
+	import Header from '../components/Header.svelte';
+	import Modal from '../components/Modal.svelte';
 
-import './styles.css';
+	import './styles.css';
 </script>
 
 <div class="app">
 	<Header />
+	<Modal />
 	<main>
 		<slot />
 	</main>

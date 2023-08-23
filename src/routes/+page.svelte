@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Button from "../components/Button.svelte";
-  import OutlineButton from "../components/OutlineButton.svelte";
+	import Button from "../components/Button.svelte";
+	import OutlineButton from "../components/OutlineButton.svelte";
 </script>
 
 <svelte:head>
