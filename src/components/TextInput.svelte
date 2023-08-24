@@ -3,6 +3,7 @@
   export let label: string;
   export let required: boolean = false;
   export let placeholder: string = '';
+  export let disabled: boolean = false;
 </script>
 
 <div class="w-full">
@@ -10,8 +11,9 @@
   <input 
     bind:value={value}
     type="text" 
-    id={label} 
-    class="
+    id={label}
+    disabled={disabled} 
+    class={`
       bg-gray-50 
       border border-gray-300 
       text-neutral-900 
@@ -22,8 +24,9 @@
       focus-visible:outline-0
       block 
       w-full 
-      p-3.5 
-      " 
+      p-3.5
+      ${disabled && 'bg-gray-200 cursor-not-allowed'} 
+      `} 
     placeholder={placeholder} 
     required={required}
   >

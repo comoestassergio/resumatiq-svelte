@@ -6,18 +6,22 @@
   export let type: 'button' | 'submit' = 'button';
   export let onClick: (() => void) | undefined = undefined;
   export let link: ButtonLink | undefined = undefined;
+  export let variant: 'primary' | 'secondary' | 'accent' | 'danger' = 'primary';
 </script>
 
 {#if link == undefined}
 <button
   type={type}
   on:click={onClick}
-  class="
+  class={`
+  flex items-center justify-center
   text-white 
-  bg-purple-600 
-  hover:bg-purple-700 
+  h-[3.125rem]
+  ${variant === 'primary' && 'bg-purple-600 hover:bg-purple-700 focus:ring-fuchsia-300 '}
+  ${variant === 'secondary' && ' bg-pink-500 hover:bg-pink-600 focus:ring-pink-300'}
+  ${variant === 'accent' && ' bg-amber-400 hover:bg-amber-500 focus:ring-orange-200'}
+  ${variant === 'danger' && 'bg-rose-500 hover:bg-rose-600 focus:ring-rose-300'}
   focus:ring-4 
-  focus:ring-fuchsia-300 
   font-medium 
   rounded-lg 
   text-sm 
@@ -26,21 +30,22 @@
   focus:outline-none
   w-full
   transition-colors
-  ">
+  `}>
   <slot />
 </button>
 {:else}
 <a
   href={link.url}
   target={link.target ?? '_self'}
-  class="
-  block
+  class={`
+  flex items-center justify-center
   text-center
   text-white 
-  bg-purple-600 
-  hover:bg-purple-700 
+  ${variant === 'primary' && 'bg-purple-600 hover:bg-purple-700 focus:ring-fuchsia-300 '}
+  ${variant === 'secondary' && ' bg-pink-500 hover:bg-pink-600 focus:ring-pink-300'}
+  ${variant === 'accent' && ' bg-amber-400 hover:bg-amber-500 focus:ring-orange-200'}
+  ${variant === 'danger' && 'bg-rose-500 hover:bg-rose-600 focus:ring-rose-300'}
   focus:ring-4 
-  focus:ring-fuchsia-300 
   font-medium 
   rounded-lg 
   text-sm 
@@ -49,7 +54,7 @@
   focus:outline-none
   w-full
   transition-colors
-  "
+  `}
 >
   <slot />
 </a>

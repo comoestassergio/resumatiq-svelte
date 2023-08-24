@@ -1,12 +1,13 @@
-import { writable } from "svelte/store";
+import { derived, writable } from "svelte/store";
 
-interface IResume {
+export interface IResume {
   personal: IResumePersonal
   education: IResumeEducation[]
-  work: IResumeWork[]
+  work: IResumeWork[],
+  state: IResumeState,
 }
 
-interface IResumePersonal {
+export interface IResumePersonal {
   firstName: string
   lastName: string
   email: string
@@ -15,7 +16,7 @@ interface IResumePersonal {
   website?: string
 }
 
-interface IResumeEducation {
+export interface IResumeEducation {
   id: number
   university: string
   degree: string
@@ -23,13 +24,19 @@ interface IResumeEducation {
   gradYear: string
 }
 
-interface IResumeWork {
+export interface IResumeWork {
   id: number
   title: string
   company: string
   startYear: string
   endYear: string | 'present'
   accountabilities: string[]
+}
+
+export interface IResumeState {
+  status: 'not-started' | 'in-progress' | 'done'
+  currentStage?: 'personal' | 'education' | 'work' | 'resume' | undefined,
+  previousStage?: 'personal' | 'education' | 'work' | 'resume' | undefined
 }
 
 export let resumeData = writable<IResume>({
@@ -41,5 +48,16 @@ export let resumeData = writable<IResume>({
     phone: '',
   },
   education: [],
-  work: []
+  work: [],
+  state: {
+    status: 'not-started'
+  }
 });
+
+export const localResumeData = derived(
+  resumeData,
+  ($resumeData, set) => {
+    const localData = JSON.parse(localStorage.getItem('resumatiq.cv')!);
+    localStorage.setItem('resumatiq.cv', JSON.stringify($resumeData));
+  }
+);

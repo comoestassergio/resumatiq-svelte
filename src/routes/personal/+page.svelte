@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>Personal | Resumatiq</title>
+	<title>Personal | Résumatiq</title>
 	<meta name="description" content="Blazingly fast resume creator" />
 </svelte:head>
 <Section>

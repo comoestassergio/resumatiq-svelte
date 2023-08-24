@@ -1,16 +1,21 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { isModalShown } from "../stores/redirectModalStore";
+  import { onMount } from "svelte";
+  import { localResumeData } from "../stores/cvstore";
+  import { isModalShown, redirectRoute } from "../stores/redirectModalStore";
   import Button from "./Button.svelte";
   
   export let title: string = "Couldn't load data";
   export let msg: string = `It seems you haven't filled out some data on one of the previous pages. You'll be redirected after clicking the button below.`;
-  export let redirectRoute: string = "personal";
 
   function handleCloseModal() {
     isModalShown.update(() => false);
-    goto(`/${redirectRoute}`);
+    goto(`/${$redirectRoute}`);
   };
+
+  onMount(() => {
+    localResumeData.subscribe(() => console.log('subscribed'));
+  })
   
 </script>
 
