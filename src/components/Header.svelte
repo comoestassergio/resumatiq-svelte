@@ -4,7 +4,7 @@
 </script>
 
 
-<header class="px-10 py-3 fixed top-0 left-0 right-0 w-full print:hidden">
+<header class="px-10 py-3 fixed top-0 left-0 right-0 w-full print:hidden bg-white">
   <div class="max-w-[1280px] w-full flex items-center justify-between mx-auto">
     {#if $page.url.pathname !== '/'}
       <a href="/">

@@ -7,7 +7,7 @@
 </script>
 
 <div class="w-full">
-  <label for={label} class="block mb-2 text-sm font-medium text-neutral-800 dark:text-white">{label}</label>
+  <label for={label} class="block mb-2 text-sm font-medium text-neutral-800">{label}</label>
   <input 
     bind:value={value}
     type="text" 

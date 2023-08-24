@@ -10,9 +10,9 @@
 	<meta name="description" content="Blazingly fast resume creator" />
 </svelte:head>
 
-<div class="flex flex-col gap-1 items-center justify-center w-full max-w-sm">
+<div class="flex flex-col gap-1 items-center justify-center w-full max-w-sm px-10">
 	<h1 class="text-5xl font-bold mb-3">Résumatiq</h1>
-	<p class="text-neutral-600">Creating resumes made as simple as never before</p>
+	<p class="text-neutral-600 text-center">Creating resumes made as simple as ever</p>
 	<div class="flex flex-col gap-2 mt-6 w-full">
 		<Button onClick={() => goto('/personal')}>
 			Create new
